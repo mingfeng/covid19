@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from confirmed_cases.api import ConfirmedCaseListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/confirmed-cases/', ConfirmedCaseListView.as_view(), name="confirmed-cases")
 ]
